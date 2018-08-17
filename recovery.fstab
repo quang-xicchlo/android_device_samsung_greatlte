@@ -14,14 +14,12 @@
 # limitations under the License.
 #
 
-/system		ext4	/dev/block/platform/11120000.ufs/by-name/SYSTEM
-/data		ext4	/dev/block/platform/11120000.ufs/by-name/USERDATA flags=length=-20480,encryptable=footer
-/cache		ext4	/dev/block/platform/11120000.ufs/by-name/CACHE
-/preload	ext4	/dev/block/platform/11120000.ufs/by-name/HIDDEN	 flags=backup=1;display="Preload"
-/boot		emmc	/dev/block/platform/11120000.ufs/by-name/BOOT	 flags=backup=1;display="Kernel"
-/recovery	emmc	/dev/block/platform/11120000.ufs/by-name/RECOVERY flags=backup=1;display="Recovery"
-/modem		emmc	/dev/block/platform/11120000.ufs/by-name/RADIO    flags=backup=1;display="Baseband"
-/efs		ext4	/dev/block/platform/11120000.ufs/by-name/EFS	     flags=backup=1;display="EFS"
-/misc       emmc    /dev/block/platform/11120000.ufs/by-name/OTA
-/external_sd	vfat	/dev/block/mmcblk1p1 /dev/block/mmcblk1	         flags=display="Micro SDcard";storage;wipeingui;removable
-/usb-otg	vfat	/dev/block/sda1  /dev/block/sda				         flags=display="USB-OTG";storage;wipeingui;removable
+/boot		emmc	/dev/block/bootdevice/by-name/BOOT
+/recovery	emmc	/dev/block/bootdevice/by-name/RECOVERY	flags=backup=1
+/system		ext4	/dev/block/bootdevice/by-name/SYSTEM
+/data		ext4	/dev/block/bootdevice/by-name/USERDATA	flags=encryptable=footer;length=-20480
+/cache		ext4	/dev/block/bootdevice/by-name/CACHE
+/modem		emmc	/dev/block/bootdevice/by-name/RADIO	flags=backup=1;display="Baseband"
+/efs		ext4	/dev/block/bootdevice/by-name/EFS	flags=backup=1;display="EFS"
+/external_sd	vfat	/dev/block/mmcblk0p1 /dev/block/mmcblk0	flags=display="Micro SDcard";storage;wipeingui;removable
+/usb-otg	vfat	/dev/block/sde1 /dev/block/sde		flags=display="USB-OTG";storage;wipeingui;removable
