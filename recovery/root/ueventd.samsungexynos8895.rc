@@ -187,7 +187,3 @@
 
 # Reactivation lock
 /dev/block/platform/11120000.ufs/by-name/STEADY    0660    system    system
-
-# let adb be enabled
-/dev/android_adb          0660   adb        adb
-/dev/android_adb_enable   0660   adb        adb
